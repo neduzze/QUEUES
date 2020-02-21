@@ -12,24 +12,37 @@ class My_Queue {
 private:
     int front, rear;
     int A[MAX_SIZE]{};
-private:
-    static void infoMessage(int x);
-
 public:
     My_Queue();
-
-    bool isEmpty();
-
-    bool isFull();
-
-    void Enqueue(int x);
-
-    int Dequeue();
-
     int Front();
-
     void print();
-
+    bool isEmpty();
+    bool isFull();
+    void Enqueue(int x);
+    int Dequeue();
+    void demo();
+    static void infoMessage(int x);
 };
 
+class MyLinkedListQueue{
+    //Private variables
+private:
+    struct Node{
+        int data;
+        Node* next;
+    };
+    //initializing front and rear
+    Node* front;
+    Node* rear;
+    //private functions
+private:
+    int Front();
+    bool IsEmpty();
+    void printQueue();
 
+public:
+    MyLinkedListQueue();
+    void demo();
+    void Enqueue(int x);
+    int Dequeue();
+};
