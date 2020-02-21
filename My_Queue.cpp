@@ -109,17 +109,17 @@ void My_Queue::demo() {
 
 //functions for Linked list class
 MyLinkedListQueue::MyLinkedListQueue() {
-    front= nullptr;
+    front = nullptr;
     rear = nullptr;
 }
+
 void MyLinkedListQueue::Enqueue(int x) {
-     Node* temp = new Node();
-     temp->data = x;
-     temp->next = nullptr;
-    if(front == nullptr && rear == nullptr){
+    Node *temp = new Node();
+    temp->data = x;
+    temp->next = nullptr;
+    if (front == nullptr && rear == nullptr) {
         front = rear = temp;
-    }
-    else{
+    } else {
         rear->next = temp;
         rear = temp;
     }
@@ -127,16 +127,15 @@ void MyLinkedListQueue::Enqueue(int x) {
 }
 
 int MyLinkedListQueue::Dequeue() {
-    Node* temp = front;
+    Node *temp = front;
     int returnVal = front->data;
-    if(front == nullptr && rear == nullptr){
+    if (front == nullptr && rear == nullptr) {
         My_Queue::infoMessage(1);
         return -1;
     }
-    if(front==rear){
+    if (front == rear) {
         front = rear = nullptr;
-    }
-    else{
+    } else {
         front = front->next;
     }
     printQueue();
@@ -146,7 +145,7 @@ int MyLinkedListQueue::Dequeue() {
 
 
 int MyLinkedListQueue::Front() {
-    if(IsEmpty())
+    if (IsEmpty())
         return -1;
     else
         return front->data;
@@ -180,6 +179,5 @@ void MyLinkedListQueue::demo() {
     Dequeue();
     Dequeue();
     Dequeue();
-
 }
 
